@@ -216,8 +216,8 @@
         <div class="card-body">
           <div class="card-text">
             <p class="mono card-board">Deterministic · fixed cycles <span class="sep">·</span> Alveo U55C, in progress</p>
-            <h3>Realtime Network Traffic Classification</h3>
-            <p>104 header bits in, one of 8 traffic classes out. Quantization-aware training, then arithmetic without multipliers, so every packet takes the same fixed number of cycles. A classifier, not a replacement for exact rule matching. Built end to end through TLS's agent interface.</p>
+            <h3>Realtime Network Packet Classification</h3>
+            <p>104 packet-header bits in, one of 8 packet classes out. Quantization-aware training, then arithmetic without multipliers, so every packet takes the same fixed number of cycles. A classifier, not a replacement for exact rule matching. Built end to end through TLS's agent interface.</p>
           </div>
           <dl class="stats card-stats n4">
             <div><dt>fixed latency (design value; U55C pending)</dt><dd>10 cycles</dd></div>
