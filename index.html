@@ -153,12 +153,12 @@
     <header class="section-head">
       <p class="eyebrow">APPLICATIONS</p>
       <h2 class="display-md">Complete systems, <em>from a conversation.</em></h2>
-      <p class="lede">Three applications running on real hardware through the platform. Every number below is read from the session record.</p>
+      <p class="lede">Three applications on real hardware, each proving a different thing: latency, system completeness, breadth. Every number is read from the session record.</p>
     </header>
 
     <div class="bento">
       <article class="card">
-        <p class="mono card-board">Edge AI · KV260</p>
+        <p class="mono card-board">Low latency · camera rate <span class="sep">·</span> KV260</p>
         <div class="card-media">
           <img class="pane" src="assets/app_detect_kv260_pane.webp" width="640" height="1216" loading="lazy" alt="App tab of the shared view: YOLOv2 on the KV260, live camera frame with a potted plant boxed, 30 frames a second, whole frame 34.5 ms">
         </div>
@@ -166,28 +166,28 @@
         <p>A YOLO detector running on the board's AI engine. Live camera in, labelled objects out, at camera rate. Running now on a KV260.</p>
         <dl class="stats card-stats">
           <div><dt>frame rate</dt><dd>30 fps</dd></div>
-          <div><dt>human code</dt><dd>0 lines</dd></div>
-          <div><dt>agent wall time</dt><dd>~48 h</dd></div>
+          <div><dt>whole frame</dt><dd>34.5 ms</dd></div>
           <div><dt>to the board</dt><dd>3 min</dd></div>
+          <div><dt>human code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">All by agents, fully parallel: ~230 agent-hours over 14 tasks · YOLOv2 VOC 448×448, whole frame 34.5 ms · live Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">Camera in to boxes out in one frame time · YOLOv2 VOC 448×448 · all by agents · live Nov 2026</span></p>
         <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/detect">Watch it live →</a>
       </article>
 
       <article class="card">
-        <p class="mono card-board">Scientific DAQ · KV260</p>
+        <p class="mono card-board">Complete system · sensor to screen <span class="sep">·</span> KV260</p>
         <div class="card-media">
           <img src="assets/proof_cosmic_kv260.webp" srcset="assets/proof_cosmic_kv260_thumb.webp 960w, assets/proof_cosmic_kv260.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw" width="1600" height="402" loading="lazy" alt="Realtime DAQ dashboard: cosmic-ray hit map, latest hits and coincidences">
         </div>
         <h3>Realtime DAQ System</h3>
         <p>Cosmic rays caught by two cameras, found in programmable logic, correlated on the processor, and shown on a live dashboard. Sensor to screen.</p>
         <dl class="stats card-stats">
-          <div><dt>per camera</dt><dd>30 fps</dd></div>
-          <div><dt>human code</dt><dd>0 lines</dd></div>
+          <div><dt>user actions</dt><dd>3</dd></div>
           <div><dt>agent wall time</dt><dd>~160 h</dd></div>
-          <div><dt>to the board</dt><dd>&lt;1 hour</dd></div>
+          <div><dt>matched reference</dt><dd>733/733</dd></div>
+          <div><dt>human code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">All by agents, fully parallel: ~690 agent-hours over 26 tasks · 733/733 matched reference · Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">2 cameras, programmable logic, processor, dashboard: ~690 agent-hours over 26 tasks, fully parallel · 30 fps per camera · Nov 2026</span></p>
       </article>
 
       <article class="card card-wide card-row">
@@ -196,7 +196,7 @@
         </div>
         <div class="card-body">
           <div class="card-text">
-            <p class="mono card-board">Generative AI · Alveo U55C</p>
+            <p class="mono card-board">Generative AI · data-center FPGA <span class="sep">·</span> Alveo U55C</p>
             <h3>Realtime LLM Inference</h3>
             <p>A 1.3-billion-parameter language model served from a data-center FPGA. TLS took an open FPGA LLaMA design, reworked it extensively, and deployed it. Ask a question, read the answer as it streams.</p>
           </div>
