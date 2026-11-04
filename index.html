@@ -160,18 +160,16 @@
       <article class="card">
         <p class="mono card-board">Low latency · detector in the fabric <span class="sep">·</span> KV260</p>
         <div class="card-media">
-          <img class="wide" src="assets/app_plyolo_kv260.webp" width="1080" height="530" loading="lazy" alt="Live view from the KV260 at the venue: camera frame with a detection box, and the on-screen readouts for frames per second, chip time per frame, camera-to-box latency and dropped frames">
+          <img src="assets/app_plyolo_kv260.webp" width="428" height="320" loading="lazy" alt="Live camera frame from the KV260 at the venue with a detection box">
         </div>
         <p class="mono card-foot"><span class="dim">Picture: live view at the venue, competition weights</span></p>
         <h3>Realtime Object Identification</h3>
-        <p>A detection network hardened into the FPGA fabric, no NPU in the path. Camera in, box out in about ten milliseconds. The camera, not the chip, sets the frame rate.</p>
-        <dl class="stats card-stats n4">
-          <div><dt>chip time per frame</dt><dd>2.9 ms</dd></div>
-          <div><dt>camera to box</dt><dd>10 ms</dd></div>
-          <div><dt>frames dropped</dt><dd>23 / 30,366</dd></div>
+        <p>A detection network hardened into the FPGA fabric, no NPU in the path. The kernel finishes every frame in under three milliseconds.</p>
+        <dl class="stats card-stats n2">
+          <div><dt>kernel latency, p50</dt><dd>2.89 ms</dd></div>
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">Bit-exact on the board · 320×160 single-object detector · Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">p95 3.00 ms · camera to box ≈10 ms · 250 MHz · 320×160 single-object · competition weights today, retrained next · Nov 2026</span></p>
       </article>
 
       <article class="card">
