@@ -276,9 +276,11 @@ ol, ul { padding: 0; list-style: none; }
 @media (max-width: 900px) { .card-body { grid-template-columns: 1fr; } }
 @media (max-width: 720px) { .card-row .card-media-wide img { aspect-ratio: 16 / 10; object-position: left center; } }
 
-.card-stats { grid-template-columns: repeat(2, 1fr); }
-.card-stats > div:nth-child(n+3) { border-top: 1px solid var(--line); }
-.card-stats > div:nth-child(odd) { border-left: 0; }
+.card-stats.n3 { grid-template-columns: repeat(3, 1fr); }
+.card-stats.n4 { grid-template-columns: repeat(2, 1fr); }
+.card-stats.n4 > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+.card-stats.n4 > div:nth-child(odd) { border-left: 0; }
+@media (max-width: 600px) { .card-stats.n3 { grid-template-columns: 1fr 1fr; } .card-stats.n3 > div:nth-child(3) { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); } }
 .card-body .card-stats { align-self: start; }
 .card-media:has(> .pane) { background: #0b1220; display: grid; place-items: center; }
 .card-media > .pane { aspect-ratio: auto; height: 100%; max-height: 420px; width: auto; object-fit: contain; }
