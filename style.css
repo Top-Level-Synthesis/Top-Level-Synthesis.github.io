@@ -286,3 +286,4 @@ ol, ul { padding: 0; list-style: none; }
 .card-media > .pane { aspect-ratio: auto; height: 100%; max-height: 420px; width: auto; object-fit: contain; }
 .card-cta { justify-self: start; height: 40px; padding: 0 18px; }
 .card-body .card-cta { grid-column: 1 / -1; }
+.footer-bottom a { color: var(--muted); } .footer-bottom a:hover { color: var(--fg); }
