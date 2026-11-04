@@ -153,7 +153,7 @@
     <header class="section-head">
       <p class="eyebrow">APPLICATIONS</p>
       <h2 class="display-md">Complete systems, <em>from a conversation.</em></h2>
-      <p class="lede">Three applications on real hardware: one keeps up with a live camera, one is a whole measurement system from sensor to screen, one runs a language model. Every number comes from the session record.</p>
+      <p class="lede">Four applications: one keeps up with a live camera, one is a whole measurement system from sensor to screen, one runs a language model, and one classifies network packets in a fixed number of cycles. Three are on real hardware now; the fourth is on its way to the board. Every number comes from the session record.</p>
     </header>
 
     <div class="bento">
@@ -208,6 +208,26 @@
           </dl>
           <p class="mono card-foot"><span class="dim">6 agent tasks in one chain, about 18 h · Oct 2026</span></p>
           <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/hb">Watch it live →</a>
+        </div>
+      </article>
+
+      <article class="card card-wide card-row">
+        <div class="card-media card-media-wide">
+          <img src="assets/app_cls_latency.webp" width="1720" height="800" loading="lazy" alt="Chart: same model, same packets. CPU per-packet latency spreads from 5.8 microseconds median to a 45 microsecond tail; the FPGA design answers every packet in 33 nanoseconds, a single fixed value">
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p class="mono card-board">Deterministic · fixed cycles <span class="sep">·</span> Alveo U55C, in progress</p>
+            <h3>Realtime Traffic Classification</h3>
+            <p>104 header bits in, one of 8 traffic classes out. Quantization-aware training, then arithmetic without multipliers, so every packet takes the same fixed number of cycles. A classifier, not a replacement for exact rule matching. Built end to end through TLS's agent interface.</p>
+          </div>
+          <dl class="stats card-stats n4">
+            <div><dt>fixed latency (design value; U55C pending)</dt><dd>10 cycles</dd></div>
+            <div><dt>per packet at 300 MHz (design value)</dt><dd>33 ns</dd></div>
+            <div><dt>accuracy, 8 classes (float 97.9%)</dt><dd>98.7%</dd></div>
+            <div><dt>human-written application code</dt><dd>0 lines</dd></div>
+          </dl>
+          <p class="mono card-foot"><span class="dim">Virtual board: 2,000/2,000 answers bit-exact · same model on a CPU, one packet at a time: median 5.8 µs, p99.99 28.5 µs · 0.8 agent-hours to green · U55C run pending · Nov 2026</span></p>
         </div>
       </article>
     </div>
