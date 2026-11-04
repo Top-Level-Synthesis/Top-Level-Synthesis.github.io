@@ -289,3 +289,4 @@ ol, ul { padding: 0; list-style: none; }
 .footer-bottom a { color: var(--muted); } .footer-bottom a:hover { color: var(--fg); }
 .card-row .card-media-wide img[src$="app_cls_latency.webp"] { aspect-ratio: 1720 / 800; object-fit: contain; background: #171717; }
 @media (max-width: 720px) { .card-row .card-media-wide img[src$="app_cls_latency.webp"] { aspect-ratio: 1720 / 800; object-position: center; } }
+.unit { text-transform: none; }
