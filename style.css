@@ -294,5 +294,5 @@ ol, ul { padding: 0; list-style: none; }
 .card-stats.n2 dd { font-size: clamp(30px, 3vw, 44px); }
 .card-stats.n2 > div { padding: 20px 18px 22px; }
 .qr { display: grid; justify-items: center; gap: 12px; margin-top: 16px; }
-.qr img { width: 168px; height: 168px; padding: 10px; border: 1px solid var(--line); background: var(--surface); }
+.qr img { width: 168px; height: 168px; padding: 8px; border: 1px solid var(--line); background: #ffffff; }
 .qr figcaption { text-align: center; line-height: 1.8; color: var(--fg); }
