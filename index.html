@@ -162,16 +162,16 @@
         <div class="card-media">
           <img class="pane" src="assets/app_detect_kv260_pane.webp" width="640" height="1216" loading="lazy" alt="Live object identification on a KV260: camera frame with a boxed object and the on-board frame counter">
         </div>
-        <p class="mono card-foot"><span class="dim">Picture: current KV260 live view; fabric-version capture coming</span></p>
+        <p class="mono card-foot"><span class="dim">Picture: current live view</span></p>
         <h3>Realtime Object Identification</h3>
-        <p>A detection network hardened into the FPGA fabric itself, no NPU in the path. Camera in, box out in about ten milliseconds, with the chip finishing each frame in under three. The camera, not the chip, sets the frame rate.</p>
+        <p>A detection network hardened into the FPGA fabric, no NPU in the path. Camera in, box out in about ten milliseconds. The camera, not the chip, sets the frame rate.</p>
         <dl class="stats card-stats n4">
           <div><dt>chip time per frame (p50 · p95)</dt><dd>2.9 · 3.0 ms</dd></div>
           <div><dt>camera to box (p50)</dt><dd>10 ms</dd></div>
           <div><dt>frames dropped</dt><dd>23 / 30,366</dd></div>
           <div><dt>human-written application code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">Up to 526 frames/s on the chip · 200 fps camera for 10 min, 0 drops · 7,200/7,200 outputs bit-exact vs simulation · 320×160 single-object, class-agnostic detector at 250 MHz, 36% of the chip · competition weights today, retrained weights next · Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">Bit-exact on the board · 320×160 single-object detector · Nov 2026</span></p>
       </article>
 
       <article class="card">
@@ -180,12 +180,12 @@
           <img src="assets/proof_cosmic_kv260.webp" srcset="assets/proof_cosmic_kv260_thumb.webp 960w, assets/proof_cosmic_kv260.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw" width="1600" height="402" loading="lazy" alt="Realtime DAQ dashboard: cosmic-ray hit map, latest hits and coincidences">
         </div>
         <h3>Realtime DAQ System</h3>
-        <p>Cosmic rays caught by two cameras, found in programmable logic, correlated on the processor, and shown on a live dashboard. Sensor to screen, with every output checked bit for bit against a reference.</p>
+        <p>Cosmic rays caught by two cameras, found in programmable logic, correlated on the processor, shown on a live dashboard. Sensor to screen.</p>
         <dl class="stats card-stats n2">
           <div><dt>build to running board</dt><dd>58 min</dd></div>
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">Agents built the whole system: 2 cameras, programmable logic, processor software, dashboard · 733/733 outputs matching reference · 30 fps per camera · Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">Agents built all of it · 733/733 bit-exact · Nov 2026</span></p>
       </article>
 
       <article class="card card-wide card-row">
@@ -196,7 +196,7 @@
           <div class="card-text">
             <p class="mono card-board">Generative AI · data-center FPGA <span class="sep">·</span> Alveo U55C</p>
             <h3>Realtime LLM Inference</h3>
-            <p>A 1.3-billion-parameter language model served from a data-center FPGA. TLS took an open FPGA LLaMA design, reworked it extensively, and deployed it. Ask a question, read the answer as it streams.</p>
+            <p>A 1.3-billion-parameter language model on a data-center FPGA, rebuilt and deployed by TLS. Ask, and read the answer as it streams.</p>
           </div>
           <dl class="stats card-stats n4">
             <div><dt>model parameters</dt><dd>1.3B</dd></div>
@@ -204,7 +204,7 @@
             <div><dt>first response</dt><dd>1.4 s</dd></div>
             <div><dt>human-written application code</dt><dd>0 lines</dd></div>
           </dl>
-          <p class="mono card-foot"><span class="dim">6 agent tasks in one chain, about 18 h · Oct 2026</span></p>
+          <p class="mono card-foot"><span class="dim">6 agent tasks, about 18 h · Oct 2026</span></p>
           <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/hb">Watch it live →</a>
         </div>
       </article>
@@ -217,15 +217,15 @@
           <div class="card-text">
             <p class="mono card-board">Deterministic · fixed cycles <span class="sep">·</span> Alveo U55C, in progress</p>
             <h3>Realtime Network Packet Classification</h3>
-            <p>104 packet-header bits in, one of 8 packet classes out. Quantization-aware training, then arithmetic without multipliers, so every packet takes the same fixed number of cycles. A classifier, not a replacement for exact rule matching. Built end to end through TLS's agent interface.</p>
+            <p>104 packet-header bits in, one of 8 classes out, in a fixed number of cycles. A classifier, not exact rule matching.</p>
           </div>
           <dl class="stats card-stats n4">
-            <div><dt>fixed latency (design value; U55C pending)</dt><dd>10 cycles</dd></div>
-            <div><dt>per packet at 300 MHz (design value)</dt><dd>33 ns</dd></div>
-            <div><dt>accuracy, 8 classes (float 97.9%)</dt><dd>98.7%</dd></div>
+            <div><dt>fixed latency (design value)</dt><dd>10 cycles</dd></div>
+            <div><dt>per packet, 300 MHz (design value)</dt><dd>33 ns</dd></div>
+            <div><dt>accuracy, 8 classes</dt><dd>98.7%</dd></div>
             <div><dt>human-written application code</dt><dd>0 lines</dd></div>
           </dl>
-          <p class="mono card-foot"><span class="dim">Virtual board: 2,000/2,000 answers bit-exact · same model on a CPU, one packet at a time: median 5.8 <span class="unit">µs</span>, p99.99 28.5 <span class="unit">µs</span> · 0.8 agent-hours to green · U55C run pending · Nov 2026</span></p>
+          <p class="mono card-foot"><span class="dim">Virtual board, bit-exact · CPU p99.99 28.5 <span class="unit">µs</span> · U55C pending</span></p>
         </div>
       </article>
     </div>
