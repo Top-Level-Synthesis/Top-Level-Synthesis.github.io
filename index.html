@@ -171,7 +171,7 @@
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
         <p class="mono card-foot"><span class="dim">YOLOv2 VOC 448×448 · live Nov 2026 · fabric version with own weights coming</span></p>
-        <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/detect">Watch it live →</a>
+        <a class="btn btn-outline card-cta live-link" data-live="detect" href="https://topls-1x.nrp-nautilus.io/go/detect" hidden>Watch it live →</a>
       </article>
 
       <article class="card">
@@ -205,7 +205,7 @@
             <div><dt>human-written code</dt><dd>0 lines</dd></div>
           </dl>
           <p class="mono card-foot"><span class="dim">6 agent tasks, about 18 h · Oct 2026</span></p>
-          <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/hb">Watch it live →</a>
+          <a class="btn btn-outline card-cta live-link" data-live="hb" href="https://topls-1x.nrp-nautilus.io/go/hb" hidden>Watch it live →</a>
         </div>
       </article>
 
@@ -308,6 +308,18 @@
 </footer>
 
 <script>
+(function () {
+  // Live buttons: shown only when live.json (refreshed every 5 min by the repo's live-check) says the demo is up.
+  var links = document.querySelectorAll('.live-link');
+  if (links.length && window.fetch) {
+    fetch('live.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.checked_at) return;
+      var age = Date.now() - Date.parse(d.checked_at);
+      if (!(age < 20 * 60 * 1000)) return;
+      links.forEach(function (a) { if (d[a.getAttribute('data-live')] === true) a.hidden = false; });
+    }).catch(function () {});
+  }
+})();
 (function () {
   var v = document.getElementById('hero-video');
   if (!v) return;
