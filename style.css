@@ -297,5 +297,5 @@ ol, ul { padding: 0; list-style: none; }
 .qr img { width: 168px; height: 168px; padding: 8px; border: 1px solid var(--line); background: #ffffff; }
 .qr figcaption { text-align: center; line-height: 1.8; color: var(--fg); }
 .card-media:has(> .wide) { background: #000; }
-.card-media > .wide { aspect-ratio: 1080 / 530; object-fit: contain; }
+.card-media > .wide { aspect-ratio: 1280 / 660; object-fit: contain; }
 [hidden] { display: none !important; }

@@ -158,19 +158,18 @@
 
     <div class="bento">
       <article class="card">
-        <p class="mono card-board">Low latency · camera rate <span class="sep">·</span> KV260</p>
+        <p class="mono card-board">Low latency · detector in the fabric <span class="sep">·</span> KV260</p>
         <div class="card-media">
-          <img class="pane" src="assets/app_detect_kv260_pane.webp" width="640" height="1216" loading="lazy" alt="Live view from the KV260: camera frame with a labelled object and the on-board readouts">
+          <img class="wide" src="assets/app_plyolo_mc_kv260.webp" width="1280" height="660" loading="lazy" alt="Live view from the KV260: colour camera frame with a labelled detection box, and the kernel latency readout">
         </div>
+        <p class="mono card-foot"><span class="dim">Picture: live view, own weights</span></p>
         <h3>Realtime Object Identification</h3>
-        <p>A YOLO detector on the board's AI engine. Live camera in, labelled objects out, at camera rate. Running now on a KV260.</p>
-        <dl class="stats card-stats n4">
-          <div><dt>live frame rate</dt><dd>30 fps</dd></div>
-          <div><dt>model inference time</dt><dd>26 ms</dd></div>
-          <div><dt>to running board</dt><dd>3 min</dd></div>
+        <p>A detection network hardened into the FPGA fabric, no NPU in the path. Colour camera in, labelled boxes out; the kernel finishes every frame in under two milliseconds.</p>
+        <dl class="stats card-stats n2">
+          <div><dt>kernel latency, p50</dt><dd>1.83 ms</dd></div>
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">YOLOv2 VOC 448×448 · live Nov 2026 · fabric version with own weights coming</span></p>
+        <p class="mono card-foot"><span class="dim">p95 2.30 ms · own weights trained on Open Images (CC BY 2.0), 10 everyday classes, single-stage multi-box · accuracy mAP50 0.52 on Open Images held-out (0.34 at the on-board threshold), not this room · 250 MHz · Nov 2026</span></p>
         <a class="btn btn-outline card-cta live-link" data-live="detect" href="https://topls-1x.nrp-nautilus.io/go/detect" hidden>Watch it live →</a>
       </article>
 
