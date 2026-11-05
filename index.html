@@ -158,19 +158,20 @@
 
     <div class="bento">
       <article class="card">
-        <p class="mono card-board">Low latency · detector in the fabric <span class="sep">·</span> KV260</p>
+        <p class="mono card-board">Low latency · camera rate <span class="sep">·</span> KV260</p>
         <div class="card-media">
           <img class="pane" src="assets/app_detect_kv260_pane.webp" width="640" height="1216" loading="lazy" alt="Live view from the KV260: camera frame with a labelled object and the on-board readouts">
         </div>
-        <p class="mono card-foot"><span class="dim">Picture: current KV260 live view (NPU demo)</span></p>
         <h3>Realtime Object Identification</h3>
-        <p>A detection network hardened into the FPGA fabric, no NPU in the path. The kernel finishes every frame in under three milliseconds.</p>
-        <dl class="stats card-stats n2">
-          <div><dt>kernel latency, p50</dt><dd>2.89 ms</dd></div>
+        <p>A YOLO detector on the board's AI engine. Live camera in, labelled objects out, at camera rate. Running now on a KV260.</p>
+        <dl class="stats card-stats n4">
+          <div><dt>live frame rate</dt><dd>30 fps</dd></div>
+          <div><dt>model inference time</dt><dd>26 ms</dd></div>
+          <div><dt>to running board</dt><dd>3 min</dd></div>
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">p95 3.00 ms · camera to box ≈10 ms · 250 MHz · 320×160 single-object · competition weights today, retrained next · Nov 2026</span></p>
-        <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/detect">Board live now: NPU detector, 30 fps →</a>
+        <p class="mono card-foot"><span class="dim">YOLOv2 VOC 448×448 · live Nov 2026 · fabric version with own weights coming</span></p>
+        <a class="btn btn-outline card-cta" href="https://topls-1x.nrp-nautilus.io/go/detect">Watch it live →</a>
       </article>
 
       <article class="card">
