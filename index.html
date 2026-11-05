@@ -153,7 +153,7 @@
     <header class="section-head">
       <p class="eyebrow">APPLICATIONS</p>
       <h2 class="display-md">Complete systems, <em>from a conversation.</em></h2>
-      <p class="lede">Four applications. Three on real hardware now, the fourth on its way to the board. Every number from the session record.</p>
+      <p class="lede">Four applications on real hardware. Every number from the session record.</p>
     </header>
 
     <div class="bento">
@@ -211,21 +211,21 @@
 
       <article class="card card-wide card-row">
         <div class="card-media card-media-wide">
-          <img src="assets/app_cls_latency.webp" width="1720" height="800" loading="lazy" alt="Chart: same model, same packets. CPU per-packet latency spreads from 5.8 microseconds median to a 45 microsecond tail; the FPGA design answers every packet in 33 nanoseconds, a single fixed value">
+          <img src="assets/app_cls_latency_u55c.webp" width="1720" height="790" loading="lazy" alt="Chart: same packets. CPU per-packet latency spreads from 5.8 microseconds median to a 45 microsecond tail; the U55C card costs a fixed 234 cycles, 780 nanoseconds, per packet">
         </div>
         <div class="card-body">
           <div class="card-text">
-            <p class="mono card-board">Deterministic · fixed cycles <span class="sep">·</span> Alveo U55C, in progress</p>
+            <p class="mono card-board">Deterministic · fixed cycles <span class="sep">·</span> Alveo U55C</p>
             <h3>Realtime Network Packet Classification</h3>
             <p>104 packet-header bits in, one of 8 classes out, in a fixed number of cycles. A classifier, not exact rule matching.</p>
           </div>
           <dl class="stats card-stats n4">
-            <div><dt>fixed latency (design value)</dt><dd>10 cycles</dd></div>
-            <div><dt>per packet, 300 MHz (design value)</dt><dd>33 ns</dd></div>
+            <div><dt>per packet on the card, every packet</dt><dd>780 ns</dd></div>
+            <div><dt>vs one CPU core, p99.99</dt><dd>37×</dd></div>
             <div><dt>accuracy, 8 classes</dt><dd>98.7%</dd></div>
             <div><dt>human-written code</dt><dd>0 lines</dd></div>
           </dl>
-          <p class="mono card-foot"><span class="dim">Virtual board, bit-exact · CPU p99.99 28.5 <span class="unit">µs</span> · U55C pending</span></p>
+          <p class="mono card-foot"><span class="dim">Board counter: 234 cycles at 300 MHz, host-to-card batch path · 2,000/2,000 bit-exact on the card · 47k LUT, 0 DSP · ~6.5 agent-hours · Nov 2026</span></p>
         </div>
       </article>
     </div>
