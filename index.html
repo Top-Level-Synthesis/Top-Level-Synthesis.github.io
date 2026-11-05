@@ -314,7 +314,7 @@
     fetch('live.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (!d || !d.checked_at) return;
       var age = Date.now() - Date.parse(d.checked_at);
-      if (!(age < 20 * 60 * 1000)) return;
+      if (!(age < 60 * 60 * 1000)) return;
       links.forEach(function (a) { if (d[a.getAttribute('data-live')] === true) a.hidden = false; });
     }).catch(function () {});
   }
