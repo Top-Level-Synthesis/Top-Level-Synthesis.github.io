@@ -298,3 +298,4 @@ ol, ul { padding: 0; list-style: none; }
 .qr figcaption { text-align: center; line-height: 1.8; color: var(--fg); }
 .card-media:has(> .wide) { background: #000; }
 .card-media > .wide { aspect-ratio: 1080 / 530; object-fit: contain; }
+[hidden] { display: none !important; }
