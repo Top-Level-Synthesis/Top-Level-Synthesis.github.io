@@ -17,8 +17,11 @@ jobs:
         run: bash tools/live_check.sh live.json
       - name: Commit if the live flags changed
         run: |
-          if git diff --quiet -I'"checked_at"' -- live.json; then
-            echo "flags unchanged"; exit 0
+          prev=$(git show HEAD:live.json | python3 -c 'import sys,json,datetime
+          d=json.load(sys.stdin); t=datetime.datetime.strptime(d["checked_at"],"%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+          print(int((datetime.datetime.now(datetime.timezone.utc)-t).total_seconds()))')
+          if git diff --quiet -I'"checked_at"' -- live.json && [ "$prev" -lt 1800 ]; then
+            echo "flags unchanged and fresh"; exit 0
           fi
           git config user.name "live-check"
           git config user.email "live-check@users.noreply.github.com"
