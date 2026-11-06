@@ -160,16 +160,16 @@
       <article class="card">
         <p class="mono card-board">Low latency · detector in the fabric <span class="sep">·</span> KV260</p>
         <div class="card-media">
-          <img class="wide" src="assets/app_plyolo_mc_kv260.webp" width="1280" height="660" loading="lazy" alt="Live view from the KV260: colour camera frame with a labelled detection box, and the kernel latency readout">
+          <img src="assets/app_plyolo_mc_bottle.webp" width="870" height="655" loading="lazy" alt="Live camera frame from the KV260 after a cold boot: a water bottle on a desk with a detection box labelled bottle">
         </div>
-        <p class="mono card-foot"><span class="dim">Picture: live view, own weights</span></p>
+        <p class="mono card-foot"><span class="dim">Picture: live view after a cold boot, own weights</span></p>
         <h3>Realtime Object Identification</h3>
-        <p>A detection network hardened into the FPGA fabric, no NPU in the path. Colour camera in, labelled boxes out; the kernel finishes every frame in under two milliseconds.</p>
+        <p>A detection network hardened into the FPGA fabric, no NPU in the path. Colour camera in, labelled boxes out; the kernel finishes every frame in well under two milliseconds.</p>
         <dl class="stats card-stats n2">
-          <div><dt>kernel latency, p50</dt><dd>1.83 ms</dd></div>
+          <div><dt>kernel latency, p50</dt><dd>1.65 ms</dd></div>
           <div><dt>human-written code</dt><dd>0 lines</dd></div>
         </dl>
-        <p class="mono card-foot"><span class="dim">p95 2.30 ms · own weights trained on Open Images (CC BY 2.0), 10 everyday classes, single-stage multi-box · accuracy mAP50 0.52 on Open Images held-out (0.34 at the on-board threshold), not this room · 250 MHz · Nov 2026</span></p>
+        <p class="mono card-foot"><span class="dim">p95 1.66 ms standalone; 1.87 ms with camera and decode running beside it · 9,200/9,200 outputs bit-exact · own weights trained on Open Images (CC BY 2.0), 10 everyday classes · mAP50 0.52 on Open Images held-out (0.34 at the board threshold), not this room · 250 MHz · Nov 2026</span></p>
         <a class="btn btn-outline card-cta live-link" data-live="detect" href="https://topls-1x.nrp-nautilus.io/go/detect" hidden>Watch it live →</a>
       </article>
 
